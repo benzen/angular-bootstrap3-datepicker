@@ -1,8 +1,8 @@
-describe 'datepicker', ()->
+describe 'ng-bootstrap3-datepicker', ()->
 
   beforeEach module 'ng-bootstrap3-datepicker'
 
-  beforeEach inject (_$rootScope_, _$compile_)->
+  beforeEach inject ( _$rootScope_, _$compile_ )->
     @scope = _$rootScope_
     @compile = _$compile_
     @elm = angular.element """
@@ -21,15 +21,15 @@ describe 'datepicker', ()->
     expect( @elm.find(".input-group-addon").length ).toBe(1)
 
   it 'should copy all attribute of the element \'datepicker\' to the input element',->
-    expect( @elm.find('input').attr("data-ng-model")).toEqual("date")
-    expect( @elm.find('input').attr("placeholder")).toEqual( "AAAA-MM-JJ" )
+    expect( @elm.find('input').attr("data-ng-model") ).toEqual("date")
+    expect( @elm.find('input').attr("placeholder") ).toEqual( "AAAA-MM-JJ" )
 
   #XXX look for way to test this
   xit 'should focus on the input when clicking on the addon',->
     @elm.find('.input-group-addon').click()
 
-    waitsFor( -> @elm.find("input").hasClass(":focus")
-    "input to have the focus",
+    waitsFor( -> @elm.find('input').hasClass(':focus')
+    'input to have the focus',
     10)
 
   it 'should show a date picker when the input has the focus',->

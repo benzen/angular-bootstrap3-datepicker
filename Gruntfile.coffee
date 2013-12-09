@@ -2,7 +2,7 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
 
-    clean: ['bower_components','js', 'dist', 'lib']
+    clean: ['bower_components','js', 'dist', 'lib','example/css','example/font', 'example']
 
     bower:
       install:
@@ -21,14 +21,13 @@ module.exports = (grunt) ->
       js:
         src: [
           'bower_components/bootstrap3-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-          'bower_components/moment/lang/*.js',
-          'bower_components/bootstrap/dist/js/bootstrap.js',
-          'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
+          # 'bower_components/bootstrap/dist/js/bootstrap.js',
+          # 'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
           'js/src.js']
         dest: 'dist/angular-bootstrap3-datepicker.js'
       css:
         src: [
-          'bower_components/bootstrap/dist/css/bootstrap.css',
+          # 'bower_components/bootstrap/dist/css/bootstrap.css',
           'bower_components/bootstrap3-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
         ]
         dest: 'dist/angular-bootstrap3-datepicker.css'
@@ -73,13 +72,22 @@ module.exports = (grunt) ->
     # copy files to exemple directory
     copy:
       js:
-        files: [flatten:true, expand:true, src: [ 'dist/angular-bootstrap3-datepicker.js', 'lib/bootstrap/*.js' ], dest: 'example/js']
-
+        files: [ flatten:true, expand:true, src: [
+          'dist/angular-bootstrap3-datepicker.js',
+          'lib/bootstrap/*.js',
+          'lib/angular/angular.js',
+          'lib/jquery/jquery.js',
+          'lib/moment/moment.js',
+          'bower_components/moment/lang/fr-ca.js'
+        ], dest: 'example/js' ]
       css:
-        files:[ flatten:true, expand:true, src: [ 'dist/angular-bootstrap3-datepicker.css','lib/bootstrap/*.css' ], dest: 'example/css']
-
+        files: [ flatten:true, expand:true, src: [
+          'dist/angular-bootstrap3-datepicker.css',
+          'lib/font-awesome/css/*.css'
+          'lib/bootstrap/*.css'
+        ], dest: 'example/css' ]
       font:
-        files:[ flatten:true, expand:true, src: [ 'lib/font-awesome/fonts/*' ], dest: 'example/fonts/' ]
+        files: [ flatten:true, expand:true, src: [ 'lib/font-awesome/fonts/*' ], dest: 'example/fonts/' ]
 
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-concat'
@@ -90,5 +98,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-karma'
   grunt.loadNpmTasks 'grunt-contrib-copy'
 
-  grunt.registerTask 'default', [ 'clean', 'bower','coffee', 'concat', 'uglify', 'copy:*' ]
+  grunt.registerTask 'unit', ['karma:unit']
+  grunt.registerTask 'default', [ 'clean', 'bower','coffee', 'concat', 'uglify', 'copy:*','unit' ]
 

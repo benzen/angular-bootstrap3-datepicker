@@ -6,14 +6,14 @@ dp.directive 'datepicker', ($compile)->
   restrict: 'E'
   replace: true
   template: """
-            <div class='input-group date'>
-              <input type='text' class='form-control' data-format="#{dateFormat}"/>
-              <span class='input-group-addon'>
-                <span class='fa fa-calendar'></span>
-              </span>
-            </div>
-            """
-  compile: ->
+    <div class='input-group date'>
+      <input type='text' class='form-control' data-format="#{dateFormat}"/>
+      <span class='input-group-addon'>
+        <span class='fa fa-calendar'></span>
+      </span>
+    </div>
+  """
+
   link: ($scope, element, attr)->
     element.find('input').datetimepicker(
       language: 'fr-ca'

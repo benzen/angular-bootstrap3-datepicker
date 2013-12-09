@@ -16,7 +16,7 @@ module.exports = function(config) {
     files: [
         'bower_components/jquery/jquery.min.js',
         'bower_components/momentjs/moment.js',
-        'bower_components/moment/lang/*.js',
+        'bower_components/moment/lang/fr-ca.js',
         'bower_components/bootstrap/dist/js/bootstrap.js',
         'bower_components/angular/angular.js',
         'bower_components/angular-mocks/angular-mocks.js',
