@@ -7,10 +7,20 @@
     <link rel='stylesheet' href='css/font-awesome.css'></link>
 
 </head>
-<body data-ng-app='demo'>
-    <div>
+<body>
+    <div data-ng-app='demo'>
         <div data-ng-controller='AppCtrl'>
-            <datepicker data-ng-model='date'>
+
+            <div class='form-group'>
+              <label>A simple date with french canadian language</label>
+              <datepicker data-ng-model='date' language="fr-ca" date-format="YYYY-MM-DD"/>
+            </div>
+
+            <div class='form-group'>
+              <label>A copy of the simple date in canadian english</label>
+              <datepicker data-ng-model='date' language="en-ca"/>
+            </div>
+
         </div>
     </div>
 
@@ -18,20 +28,12 @@
     <script src='js/bootstrap.js'></script>
     <script src='js/angular.js'></script>
     <script src='js/moment.js'></script>
+    <script src='js/fr-ca.js' charset='utf-8'></script>
     <script src='js/angular-bootstrap3-datepicker.js' charset='utf-8'></script>
     <script type='application/javascript'>
         app = angular.module('demo', ['ng-bootstrap3-datepicker']);
 
-        app.controller('AppCtrl', function($scope) {
-            $scope.datepickerOptions = {
-                format: 'yyyy-mm-dd',
-                language: 'fr',
-                startDate: "2012-10-01",
-                endDate: "2012-10-31",
-                autoclose: true,
-                weekStart: 0
-            }
-        });
+        app.controller('AppCtrl', function($scope){});
     </script>
 </body>
 </html>

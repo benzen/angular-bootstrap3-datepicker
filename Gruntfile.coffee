@@ -2,7 +2,7 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
 
-    clean: ['bower_components','js', 'dist', 'lib','example/css','example/font', 'example']
+    clean: ['bower_components','js', 'dist', 'lib','example/css','example/font', 'example/js']
 
     bower:
       install:
@@ -21,13 +21,10 @@ module.exports = (grunt) ->
       js:
         src: [
           'bower_components/bootstrap3-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-          # 'bower_components/bootstrap/dist/js/bootstrap.js',
-          # 'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
           'js/src.js']
         dest: 'dist/angular-bootstrap3-datepicker.js'
       css:
         src: [
-          # 'bower_components/bootstrap/dist/css/bootstrap.css',
           'bower_components/bootstrap3-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
         ]
         dest: 'dist/angular-bootstrap3-datepicker.css'
