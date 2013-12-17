@@ -1,20 +1,21 @@
-# angular-bootstrap3-datepicker - [AngularJS](http://angularjs.org/) directives for the [bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
+# angular-bootstrap3-datepicker
+A [AngularJS](http://angularjs.org/) directives for the [bootstrap3-datepicker](https://github.com/Eonasdan/bootstrap-datetimepicker)
 
 ## Demo
 
-Here's a working [jsfiddle](http://jsfiddle.net/cletourneau/kGGCZ/)
+Here's a working [jsfiddle](http://jsfiddle.net/benzen/46E2E/)
 Look [here](https://github.com/Eonasdan/bootstrap-datetimepicker) for more information about the original jquery-plugin and more demo.
 
 ## Installation
 
-Installation is easy, jQuery, AngularJS and Bootstrap's JS/CSS are required.
+Installation is easy, jQuery, momentjs, AngularJS and Bootstrap's JS/CSS are required.
 You can download angular-bootstrap-datepicker via bower:
-`bower install angular-bootstrap-datepicker`
+`bower install angular-bootstrap3-datepicker`
 
 When you are done downloading all the dependencies and project files the only remaining part is to add dependencies as an AngularJS module:
 
 ```javascript
-angular.module('myModule', ['ng-bootstrap-datepicker']);
+angular.module('myModule', ['ng-bootstrap3-datepicker']);
 ```
 
 You also need to include these files:
@@ -25,7 +26,9 @@ You also need to include these files:
 <script src="jquery.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
 <script src="angular.js"></script>
-<script src="angular-bootstrap-datepicker.js" charset="utf-8"></script>
+<script src="moment.js"></script>
+<script src="moment-your-locale.js"></script>
+<script src="angular-bootstrap3-datepicker.js" charset="utf-8"></script>
 ```
 
 Make sure you use `charset="utf-8"` in your script tag if your browser (or those of your users) is displaying characters wrong when using another language.
@@ -35,14 +38,20 @@ Make sure you use `charset="utf-8"` in your script tag if your browser (or those
 To use the directive, use the following code :
 
 ```html
-<input type="text" ng-datepicker ng-options="datepickerOptions" ng-model="date">
+<datepicker ng-model="date" language="en" date-format="YYYY-MM-DD">
 ```
 
-`ng-datepicker` : Indicates you want your input as a date picker.
+`datepicker` : Indicates you want a date picker
 
-`ng-options` : Object of the controller scope containing the [options](http://bootstrap-datepicker.readthedocs.org/en/latest/options.html) for your date picker.
+`language` : The locale you want to use for this date picker. To work, this require adding the corresponding momentjs locale file.
 
-`ng-model` : Variable of the controller scope to store the date. The date is currently store as a string, formatted according to the one set in ng-options.
+`ng-model` : Variable of the controller scope to store the date. The date is currently store as a string, formatted according to date format.
 
+`date-format`: Format to use to format the date. The correct definition can be found [here](http://momentjs.com/docs/#/displaying/format/)
 
-For a working example, see https://github.com/cletourneau/angular-bootstrap-datepicker/blob/master/example/demo.html
+For a working example, see http://jsfiddle.net/benzen/46E2E/
+
+# Thanks to
+
+ * cletourneau: https://github.com/cletourneau
+ * Eonasdan: https://github.com/Eonasdan/bootstrap-datetimepicker
