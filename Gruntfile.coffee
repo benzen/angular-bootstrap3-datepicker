@@ -86,6 +86,19 @@ module.exports = (grunt) ->
       font:
         files: [ flatten:true, expand:true, src: [ 'lib/font-awesome/fonts/*' ], dest: 'example/fonts/' ]
 
+    'http-server':
+        dev:
+        #  the server root directory
+          root: "./"
+          port: 8000,
+          host: "localhost"
+          # cache: "<sec>"
+          showDir : true,
+          autoIndex: true,
+          defaultExt: "html",
+          #wait or not for the process to finish
+          runInBackground: true
+
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -94,7 +107,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-bower-task'
   grunt.loadNpmTasks 'grunt-karma'
   grunt.loadNpmTasks 'grunt-contrib-copy'
+  grunt.loadNpmTasks 'grunt-http-server'
 
-  grunt.registerTask 'unit', ['karma:unit']
-  grunt.registerTask 'default', [ 'clean', 'bower','coffee', 'concat', 'uglify', 'copy:*','unit' ]
+  grunt.registerTask 'test-unit', ['karma:unit']
+  grunt.registerTask 'test-system', ['http-server','karma:e2e']
+
+  grunt.registerTask 'default', [ 'clean', 'bower','coffee', 'concat', 'uglify', 'copy:*','test-unit' ]
 

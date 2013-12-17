@@ -2,15 +2,11 @@
 dp = angular.module('ng-bootstrap3-datepicker', [])
 
 dp.directive 'datepicker', ($compile)->
-
-  dateFormat = ""
-  language = ""
-
   restrict: 'E'
   replace: true
   template: """
     <div class='input-group date'>
-      <input type='text' class='form-control' data-format="#{dateFormat}"/>
+      <input type='text' class='form-control'/>
       <span class='input-group-addon'>
         <span class='fa fa-calendar'></span>
       </span>
@@ -18,6 +14,9 @@ dp.directive 'datepicker', ($compile)->
   """
 
   link: ($scope, element, attr)->
+
+    dateFormat = ""
+    language = ""
 
     attributes = element.prop "attributes"
     input = element.find "input"
@@ -34,6 +33,7 @@ dp.directive 'datepicker', ($compile)->
     input.datetimepicker(
       language: language
       pickTime: false
+      dateFormat: dateFormat
       icons:
           time: 'fa fa-clock-o'
           date: 'fa fa-calendar'
@@ -41,12 +41,12 @@ dp.directive 'datepicker', ($compile)->
           down: 'fa fa-arrow-down'
     )
 
+    #allow addon to be click in place of the input itself
     element.find('.input-group-addon').on 'click', (e)->
       element.find('input').focus()
 
     #update model from date picker change value
     element.on "change.dp",(e)->
-
       if e.date
         objPath = attr.ngModel.split(".")
         obj = $scope

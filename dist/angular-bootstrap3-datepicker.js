@@ -31,15 +31,14 @@ var dp;
 dp = angular.module('ng-bootstrap3-datepicker', []);
 
 dp.directive('datepicker', function($compile) {
-  var dateFormat, language;
-  dateFormat = "";
-  language = "";
   return {
     restrict: 'E',
     replace: true,
-    template: "<div class='input-group date'>\n  <input type='text' class='form-control' data-format=\"" + dateFormat + "\"/>\n  <span class='input-group-addon'>\n    <span class='fa fa-calendar'></span>\n  </span>\n</div>",
+    template: "<div class='input-group date'>\n  <input type='text' class='form-control'/>\n  <span class='input-group-addon'>\n    <span class='fa fa-calendar'></span>\n  </span>\n</div>",
     link: function($scope, element, attr) {
-      var attributes, input;
+      var attributes, dateFormat, input, language;
+      dateFormat = "";
+      language = "";
       attributes = element.prop("attributes");
       input = element.find("input");
       angular.forEach(attributes, function(e) {
@@ -56,6 +55,7 @@ dp.directive('datepicker', function($compile) {
       input.datetimepicker({
         language: language,
         pickTime: false,
+        dateFormat: dateFormat,
         icons: {
           time: 'fa fa-clock-o',
           date: 'fa fa-calendar',

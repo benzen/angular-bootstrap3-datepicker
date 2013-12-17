@@ -1,22 +1,20 @@
+
 describe 'angular-bootstrap-datepicker', ->
 
-  # beforeEach ->
-  #   browser().navigateTo('/test/system/test.html')
+  beforeEach ->
+    browser().navigateTo('/example/demo.html')
+    currentDate = new Date().toJSON().split("T")[0]
+    @fifteenOfThisMonth = currentDate.substr(0, currentDate.length-2)+"15"
 
-  # it 'picking a date from the calendar table updates the scope', ->
-  #   element('div #datepicker input').query (elements, done)->
-  #     elements.focus()
-  #     done()
-  #   element('.day:contains(15)').click()
-  #   element('#datepickerMirror').click()
+  it 'picking a date from the calendar table updates the scope', ->
+    element('input#date1').query (elements, done)->
+      elements.focus()
+      done()
 
-  #   expect(element('#datepickerMirror', 'picked date').val()).toEqual('2012-10-15')
+    jQueryFn('td.day:contains(15):first', 'click')
 
-  # it 'can be updated by the scope', ->
-  #   input('date').enter('2012-10-26')
-  #   expect(element('#datepicker input', 'datepicker').val()).toEqual('2012-10-26')
+    expect(input('date1').val()).toEqual(@fifteenOfThisMonth)
 
-  # xit 'can focus on the input -- this test does not work yet', ->
-  #   jQueryFn('div #datepicker input', 'focus')
-  #   keyboard().keydown('div #datepicker input', 'keydown', 27, false, false, false);
-  #   keyboard().keydown('div #datepicker input', 'keypress', 50, false, false, false);
+  it 'can be updated by the scope', ->
+    input('date2').enter(@fifteenOfThisMonth)
+    expect(jQueryFn('input#date2', 'val')).toEqual(@fifteenOfThisMonth)
