@@ -8,7 +8,7 @@ Look [here](https://github.com/Eonasdan/bootstrap-datetimepicker) for more infor
 
 ## Installation
 
-Installation is easy, jQuery, momentjs, AngularJS and Bootstrap's JS/CSS are required.
+Installation is easy, jQuery, momentjs, font-awesome, AngularJS and Bootstrap's JS/CSS are required.
 You can download angular-bootstrap-datepicker via bower:
 `bower install angular-bootstrap3-datepicker`
 
@@ -22,6 +22,7 @@ You also need to include these files:
 ```html
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
 <link rel="stylesheet" href="angular-bootstrap-datepicker.css" />
+<link rel="stylesheet" href="font-awesome.css" />
 
 <script src="jquery.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
