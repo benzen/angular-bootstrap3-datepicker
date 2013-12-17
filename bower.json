@@ -1,7 +1,7 @@
 {
   "name": "angular-bootstrap3-datepicker",
   "version": "0.1.0",
-  "description": "Angular Boostrap Datepicker based on xxx",
+  "description": "Angular Boostrap Datepicker based on Eonasdan's date picker",
   "main": [
     "dist/angular-bootstrap3-datepicker.js",
     "dist/angular-bootstrap3-datepicker.min.js",
