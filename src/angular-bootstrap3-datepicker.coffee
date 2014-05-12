@@ -47,14 +47,16 @@ dp.directive 'datepicker', ($compile)->
 
     #update model from date picker change value
     element.on "change.dp",(e)->
-      if e.date
-        objPath = attr.ngModel.split(".")
-        obj = $scope
-        for path,i in objPath
-          obj[path] = {} unless obj[path]
+      objPath = attr.ngModel.split(".")
+      obj = $scope
+      for path,i in objPath
+        obj[path] = {} unless obj[path]
+        if e.date
           obj[path] = e.date.format(dateFormat) if i is objPath.length - 1
-          obj = obj[path]
+        else
+          obj[path] = null
+        obj = obj[path]
 
-        $scope.$digest()
+      $scope.$digest()
 
     $compile(input)($scope)

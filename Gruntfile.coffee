@@ -90,7 +90,7 @@ module.exports = (grunt) ->
         dev:
         #  the server root directory
           root: "./"
-          port: 8000,
+          port: 8111,
           host: "localhost"
           # cache: "<sec>"
           showDir : true,
@@ -113,4 +113,3 @@ module.exports = (grunt) ->
   grunt.registerTask 'test-system', ['http-server','karma:e2e']
 
   grunt.registerTask 'default', [ 'clean', 'bower','coffee', 'concat', 'uglify', 'copy:*','test-unit' ]
-
