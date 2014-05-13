@@ -19,13 +19,13 @@
   ],
   "dependencies": {
     "bootstrap": "3.0.0",
-    "bootstrap3-datetimepicker": "~2.1.11",
-    "momentjs": "~2.4.0",
-    "font-awesome": "~4.0.3",
-    "angular": "~1.2.1"
+    "bootstrap3-datetimepicker": "2.1.11",
+    "momentjs": "2.4.0",
+    "font-awesome": "4.0.3",
+    "angular": "1.2.1"
   },
   "devDependencies": {
-    "jasmine-jquery": "~1.5.91",
-    "angular-mocks": "~1.2.1"
+    "jasmine-jquery": "1.5.91",
+    "angular-mocks": "1.2.1"
   }
 }

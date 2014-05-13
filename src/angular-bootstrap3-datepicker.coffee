@@ -20,6 +20,7 @@ dp.directive 'datepicker', ($compile)->
 
     attributes = element.prop "attributes"
     input = element.find "input"
+    resetValue = false
 
     angular.forEach( attributes, (e)->
       unless e.name is "class"
@@ -47,16 +48,23 @@ dp.directive 'datepicker', ($compile)->
 
     #update model from date picker change value
     element.on "change.dp",(e)->
-      objPath = attr.ngModel.split(".")
-      obj = $scope
-      for path,i in objPath
-        obj[path] = {} unless obj[path]
+      $scope.$apply ->
         if e.date
-          obj[path] = e.date.format(dateFormat) if i is objPath.length - 1
-        else
-          obj[path] = null
-        obj = obj[path]
+          objPath = attr.ngModel.split(".")
+          obj = $scope
+          for path,i in objPath
+            obj[path] = {} unless obj[path]
+            if i is objPath.length - 1
+              if resetValue
+                resetValue = false
+                obj[path] = null
+              else
+                obj[path] = e.date.format(dateFormat)
+            else
+              obj = obj[path]
 
-      $scope.$digest()
+    $scope.$watch attr.ngModel, (newValue, oldValue)->
+      if(oldValue and !newValue) then resetValue = true
+
 
     $compile(input)($scope)

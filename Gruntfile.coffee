@@ -8,6 +8,7 @@ module.exports = (grunt) ->
       install:
         options:
           install: true
+          targetDir: 'lib'
 
     coffee:
       compile:
@@ -111,5 +112,5 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'test-unit', ['karma:unit']
   grunt.registerTask 'test-system', ['http-server','karma:e2e']
-
-  grunt.registerTask 'default', [ 'clean', 'bower','coffee', 'concat', 'uglify', 'copy:*','test-unit' ]
+  grunt.registerTask 'build', ['coffee', 'concat', 'uglify', 'copy:*']
+  grunt.registerTask 'default', [ 'clean', 'bower','build','test-unit','test-system' ]
