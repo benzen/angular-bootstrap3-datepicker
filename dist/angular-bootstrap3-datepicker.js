@@ -36,9 +36,8 @@ dp.directive('datepicker', function($compile) {
     replace: true,
     template: "<div class='input-group date'>\n  <input type='text' class='form-control'/>\n  <span class='input-group-addon'>\n    <span class='fa fa-calendar'></span>\n  </span>\n</div>",
     link: function($scope, element, attr) {
-      var attributes, dateFormat, input, language, resetValue;
+      var attributes, dateFormat, input, resetValue;
       dateFormat = "";
-      language = "";
       attributes = element.prop("attributes");
       input = element.find("input");
       resetValue = false;
@@ -47,22 +46,23 @@ dp.directive('datepicker', function($compile) {
           input.attr(e.name, e.value);
         }
         if (e.name === "date-format") {
-          dateFormat = e.value;
-        }
-        if (e.name === "language") {
-          return language = e.value;
+          return dateFormat = e.value;
         }
       });
-      input.datetimepicker({
-        language: language,
-        pickTime: false,
-        dateFormat: dateFormat,
-        icons: {
-          time: 'fa fa-clock-o',
-          date: 'fa fa-calendar',
-          up: 'fa fa-arrow-up',
-          down: 'fa fa-arrow-down'
-        }
+      $scope.$watch(attr.language, function(value) {
+        var language;
+        language = value ? value : input.attr('language');
+        return input.datetimepicker({
+          language: language,
+          pickTime: false,
+          dateFormat: dateFormat,
+          icons: {
+            time: 'fa fa-clock-o',
+            date: 'fa fa-calendar',
+            up: 'fa fa-arrow-up',
+            down: 'fa fa-arrow-down'
+          }
+        });
       });
       element.find('.input-group-addon').on('click', function(e) {
         return element.find('input').focus();

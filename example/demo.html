@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" data-ng-app='demo'>
 <head>
     <title>Angular Bootstrap3 Datepicker Demo</title>
-    <link rel='stylesheet' href='css/bootstrap.css' />
-    <link rel='stylesheet' href='css/angular-bootstrap3-datepicker.css'></link>
-    <link rel='stylesheet' href='css/font-awesome.css'></link>
+    <link rel='stylesheet' href='css/bootstrap.css'>
+    <link rel='stylesheet' href='css/angular-bootstrap3-datepicker.css'>
+    <link rel='stylesheet' href='css/font-awesome.css'>
 
 </head>
 <body>
-    <div data-ng-app='demo'>
+    <div>
         <div data-ng-controller='AppCtrl'>
 
             <div class='form-group'>
@@ -20,10 +20,14 @@
               <label>A date in canadian english</label>
               <datepicker id="date2" data-ng-model='date2' language="en-ca"/>
             </div>
-
             <div class='form-group'>
               <label>A simple date with another format</label>
               <datepicker id="date3" data-ng-model='date3' language="fr-ca" date-format="DD/MM/YYYY"/>
+            </div>
+            {{test = 'en-ca'}}
+            <div class='form-group'>
+              <label>A date in canadian english using an expression</label>
+              <datepicker id="date2" data-ng-model='date4' language="test"/>
             </div>
 
         </div>
@@ -36,9 +40,8 @@
     <script src='js/fr-ca.js' charset='utf-8'></script>
     <script src='js/angular-bootstrap3-datepicker.js' charset='utf-8'></script>
     <script type='application/javascript'>
-        app = angular.module('demo', ['ng-bootstrap3-datepicker']);
-
-        app.controller('AppCtrl', function($scope){});
+        // var app = angular.module('demo', ['ng-bootstrap3-datepicker']);
+        // app.controller('AppCtrl', function($scope){});
     </script>
 </body>
 </html>
