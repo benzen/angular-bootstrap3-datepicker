@@ -1,6 +1,6 @@
-describe 'ng-bootstrap3-datepicker', ()->
+describe 'ng-bs3-datepicker', ()->
 
-  beforeEach module 'ng-bootstrap3-datepicker'
+  beforeEach module 'ng-bs3-datepicker'
 
   beforeEach inject ( _$rootScope_, _$compile_ )->
     @scope = _$rootScope_
@@ -8,7 +8,7 @@ describe 'ng-bootstrap3-datepicker', ()->
     @elm = angular.element """
       <label>Periode</label>
       <div class='form-group'>
-        <datepicker data-ng-model='date' placeholder='AAAA-MM-JJ'/>
+        <ng-bs3-datepicker data-ng-model='date' placeholder='AAAA-MM-JJ'/>
       </div>
     """
     @compile(@elm)(@scope)

@@ -1,6 +1,6 @@
 {
   "name": "angular-bootstrap3-datepicker",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Angular Boostrap Datepicker based on Eonasdan's date picker",
   "main": [
     "dist/angular-bootstrap3-datepicker.js",
@@ -18,15 +18,15 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "3.0.0",
-    "bootstrap3-datetimepicker": "2.1.11",
+    "bootstrap": "3.3.0",
+    "bootstrap3-datetimepicker": "3.1.3",
     "momentjs": "2.4.0",
     "font-awesome": "4.0.3",
-    "angular": "1.2.1",
+    "angular": "1.3.0",
     "jquery":"1.11.1"
   },
   "devDependencies": {
     "jasmine-jquery": "1.5.91",
-    "angular-mocks": "1.2.1"
+    "angular-mocks": "1.3.0"
   }
 }

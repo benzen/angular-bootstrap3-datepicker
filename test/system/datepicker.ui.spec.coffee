@@ -1,5 +1,5 @@
 
-describe 'angular-bootstrap-datepicker', ->
+describe 'angular-bootstrap3-datepicker', ->
 
   beforeEach ->
     browser().navigateTo('/example/demo.html')

@@ -1,7 +1,7 @@
 
-dp = angular.module('ng-bootstrap3-datepicker', [])
+dp = angular.module('ng-bs3-datepicker', [])
 
-dp.directive 'datepicker', ($compile)->
+dp.directive 'ngBs3Datepicker', ($compile)->
   restrict: 'E'
   replace: true
 

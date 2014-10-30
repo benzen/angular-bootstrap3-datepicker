@@ -15,8 +15,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
         'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/momentjs/moment.js',
-        'bower_components/moment/lang/fr-ca.js',
+        'bower_components/moment/moment.js',
+        'bower_components/moment/locale/fr-ca.js',
         'bower_components/bootstrap/dist/js/bootstrap.js',
         'bower_components/angular/angular.js',
         'bower_components/angular-mocks/angular-mocks.js',

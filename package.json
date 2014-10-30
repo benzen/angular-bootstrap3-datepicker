@@ -1,6 +1,6 @@
 {
   "name": "angular-bootstrap3-datepicker",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "A simple datepicker for angular and bootstrap3",
   "main": "angular-bootstrap3-datepicker.js",
   "directories": {

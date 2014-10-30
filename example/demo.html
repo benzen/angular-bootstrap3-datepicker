@@ -3,7 +3,7 @@
 <head>
     <title>Angular Bootstrap3 Datepicker Demo</title>
     <link rel='stylesheet' href='css/bootstrap.css'>
-    <link rel='stylesheet' href='css/angular-bootstrap3-datepicker.css'>
+    <link rel='stylesheet' href='css/ng-bs3-datepicker.css'>
     <link rel='stylesheet' href='css/font-awesome.css'>
 
 </head>
@@ -13,21 +13,21 @@
 
             <div class='form-group'>
               <label>A date with french canadian language</label>
-              <datepicker id="date1" data-ng-model='date1' language="fr-ca" date-format="YYYY-MM-DD"/>
+              <ng-bs3-datepicker id="date1" data-ng-model='date1' language="fr-ca" date-format="YYYY-MM-DD"/>
             </div>
 
             <div class='form-group'>
               <label>A date in canadian english</label>
-              <datepicker id="date2" data-ng-model='date2' language="en-ca"/>
+              <ng-bs3-datepicker id="date2" data-ng-model='date2' language="en-ca"/>
             </div>
             <div class='form-group'>
               <label>A simple date with another format</label>
-              <datepicker id="date3" data-ng-model='date3' language="fr-ca" date-format="DD/MM/YYYY"/>
+              <ng-bs3-datepicker id="date3" data-ng-model='date3' language="fr-ca" date-format="DD/MM/YYYY"/>
             </div>
             {{test = 'en-ca'}}
             <div class='form-group'>
               <label>A date in canadian english using an expression</label>
-              <datepicker id="date2" data-ng-model='date4' language="test"/>
+              <ng-bs3-datepicker id="date2" data-ng-model='date4' language="test"/>
             </div>
 
         </div>
@@ -38,10 +38,12 @@
     <script src='js/angular.js'></script>
     <script src='js/moment.js'></script>
     <script src='js/fr-ca.js' charset='utf-8'></script>
-    <script src='js/angular-bootstrap3-datepicker.js' charset='utf-8'></script>
+    <script src='js/ng-bs3-datepicker.js' charset='utf-8'></script>
     <script type='application/javascript'>
-        // var app = angular.module('demo', ['ng-bootstrap3-datepicker']);
-        // app.controller('AppCtrl', function($scope){});
+        var app = angular.module('demo', ['ng-bs3-datepicker']);
+        app.controller('AppCtrl', function($scope){
+          console.log("hey")
+        });
     </script>
 </body>
 </html>

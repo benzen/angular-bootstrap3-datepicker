@@ -39,7 +39,7 @@ Make sure you use `charset="utf-8"` in your script tag if your browser (or those
 To use the directive, use the following code :
 
 ```html
-<datepicker ng-model="date" language="en" date-format="YYYY-MM-DD">
+<ng-bs3-datepicker ng-model="date" language="en" date-format="YYYY-MM-DD">
 ```
 
 `datepicker` : Indicates you want a date picker

@@ -23,19 +23,19 @@ module.exports = (grunt) ->
         src: [
           'bower_components/bootstrap3-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
           'js/src.js']
-        dest: 'dist/angular-bootstrap3-datepicker.js'
+        dest: 'dist/ng-bs3-datepicker.js'
       css:
         src: [
           'bower_components/bootstrap3-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
         ]
-        dest: 'dist/angular-bootstrap3-datepicker.css'
+        dest: 'dist/ng-bs3-datepicker.css'
 
     uglify:
       options:
         mangle: false
       main:
         files:
-          'dist/angular-bootstrap3-datepicker.min.js': ['dist/angular-bootstrap3-datepicker.js']
+          'dist/ng-bs3-datepicker.min.js': ['dist/ng-bs3-datepicker.js']
 
     watch:
       options:
@@ -71,16 +71,16 @@ module.exports = (grunt) ->
     copy:
       js:
         files: [ flatten:true, expand:true, src: [
-          'dist/angular-bootstrap3-datepicker.js',
+          'dist/ng-bs3-datepicker.js',
           'lib/bootstrap/*.js',
           'lib/angular/angular.js',
           'lib/jquery/jquery.js',
           'lib/moment/moment.js',
-          'bower_components/moment/lang/fr-ca.js'
+          'bower_components/moment/locale/fr-ca.js'
         ], dest: 'example/js' ]
       css:
         files: [ flatten:true, expand:true, src: [
-          'dist/angular-bootstrap3-datepicker.css',
+          'dist/ng-bs3-datepicker.css',
           'lib/font-awesome/css/*.css'
           'lib/bootstrap/*.css'
         ], dest: 'example/css' ]
@@ -98,6 +98,7 @@ module.exports = (grunt) ->
           autoIndex: true,
           defaultExt: "html",
           #wait or not for the process to finish
+          # runInBackground: false
           runInBackground: true
 
   grunt.loadNpmTasks 'grunt-contrib-clean'
