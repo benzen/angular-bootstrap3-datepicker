@@ -21,15 +21,16 @@ angular.module('myModule', ['ng-bootstrap3-datepicker']);
 You also need to include these files:
 ```html
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
-<link rel="stylesheet" href="angular-bootstrap-datepicker.css" />
 <link rel="stylesheet" href="font-awesome.css" />
+<link rel="stylesheet" href="ng-bs3-datepicker.css" />
+
 
 <script src="jquery.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
 <script src="angular.js"></script>
 <script src="moment.js"></script>
 <script src="moment-your-locale.js"></script>
-<script src="angular-bootstrap3-datepicker.js" charset="utf-8"></script>
+<script src="ng-bs3-datepicker.js" charset="utf-8"></script>
 ```
 
 Make sure you use `charset="utf-8"` in your script tag if your browser (or those of your users) is displaying characters wrong when using another language.
