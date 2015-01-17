@@ -34,7 +34,7 @@ dp.directive 'ngBs3Datepicker', ($compile)->
       input.datetimepicker(
         language: language
         pickTime: false
-        dateFormat: dateFormat
+        format: dateFormat
         icons:
             time: 'fa fa-clock-o'
             date: 'fa fa-calendar'
