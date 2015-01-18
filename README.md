@@ -1,6 +1,12 @@
 # angular-bootstrap3-datepicker
 A [AngularJS](http://angularjs.org/) directives for the [bootstrap3-datepicker](https://github.com/Eonasdan/bootstrap-datetimepicker)
 
+##New maintainer
+
+I'm looking for someone willing to help on this.
+Obviously there is not much to do, but still it require some attention.
+Feel free to contact me in any way if your interested in this.
+
 ## Demo
 
 Here's a working [jsfiddle](http://jsfiddle.net/benzen/46E2E/)
