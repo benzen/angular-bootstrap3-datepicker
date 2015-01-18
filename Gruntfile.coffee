@@ -7,8 +7,8 @@ module.exports = (grunt) ->
     bower:
       install:
         options:
-          install: true
-          targetDir: 'lib'
+         install: true
+         targetDir: 'lib'
 
     coffee:
       compile:
