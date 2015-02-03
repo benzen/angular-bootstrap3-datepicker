@@ -1,6 +1,6 @@
 {
   "name": "angular-bootstrap3-datepicker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Angular Boostrap Datepicker based on Eonasdan's date picker",
   "main": [
     "dist/ng-bs3-datepicker.js",
