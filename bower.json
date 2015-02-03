@@ -3,9 +3,9 @@
   "version": "1.0.1",
   "description": "Angular Boostrap Datepicker based on Eonasdan's date picker",
   "main": [
-    "dist/angular-bootstrap3-datepicker.js",
-    "dist/angular-bootstrap3-datepicker.min.js",
-    "dist/angular-bootstrap3-datepicker.css"],
+    "dist/ng-bs3-datepicker.js",
+    "dist/ng-bs3-datepicker.css"
+  ],
   "authors": [
     "Benjamin Dreux"
   ],
@@ -20,7 +20,7 @@
   "dependencies": {
     "bootstrap": "3.3.0",
     "bootstrap3-datetimepicker": "3.1.3",
-    "momentjs": "2.4.0",
+    "moment": "2.9.0",
     "font-awesome": "4.0.3",
     "angular": "1.3.0",
     "jquery":"1.11.1"
