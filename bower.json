@@ -3,9 +3,9 @@
   "version": "1.0.1",
   "description": "Angular Boostrap Datepicker based on Eonasdan's date picker",
   "main": [
-    "dist/angular-bootstrap3-datepicker.js",
-    "dist/angular-bootstrap3-datepicker.min.js",
-    "dist/angular-bootstrap3-datepicker.css"],
+    "dist/ng-bs3-datepicker.js",
+    "dist/ng-bs3-datepicker.min.js",
+    "dist/ng-bs3-datepicker.css"],
   "authors": [
     "Benjamin Dreux"
   ],
