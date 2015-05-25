@@ -2,9 +2,10 @@ describe 'ng-bs3-datepicker', ()->
 
   beforeEach module 'ng-bs3-datepicker'
 
-  beforeEach inject ( _$rootScope_, _$compile_ )->
+  beforeEach inject ( _$rootScope_, _$compile_, _$timeout_ )->
     @scope = _$rootScope_
     @compile = _$compile_
+    @timeout = _$timeout_
     @elm = angular.element """
       <label>Periode</label>
       <div class='form-group'>
@@ -12,10 +13,10 @@ describe 'ng-bs3-datepicker', ()->
       </div>
     """
     @compile(@elm)(@scope)
+    @timeout.flush()
     @scope.$digest()
 
   it 'should create textfield and group-add-on', ->
-
     expect( @elm.find('input').length ).toBe( 1 )
     expect( @elm.find('input')[0].type ).toEqual( "text" )
     expect( @elm.find(".input-group-addon").length ).toBe(1)
@@ -33,15 +34,15 @@ describe 'ng-bs3-datepicker', ()->
     10)
 
   it 'should show a date picker when the input has the focus',->
-     @elm.find('input').click()
-     expect( angular.element(".bootstrap-datetimepicker-widget .datepicker .datepicker-days").css("display")).toBe "block"
+    @elm.find('input').click()
+    expect( angular.element(".bootstrap-datetimepicker-widget .datepicker .datepicker-days").css("display")).toBe "block"
 
   it 'should update the model when updating the form by hand',->
-     @elm.find('input').val("2013-01-01")
+   @elm.find('input').val("2013-01-01")
 
-     # angular listen to the input event to update the model
-     #see http://stackoverflow.com/questions/17109850/update-angular-model-after-setting-input-value-with-jquery?answertab=votes#tab-top
-     @elm.find('input').trigger('input')
+   # angular listen to the input event to update the model
+   #see http://stackoverflow.com/questions/17109850/update-angular-model-after-setting-input-value-with-jquery?answertab=votes#tab-top
+   @elm.find('input').trigger('input')
 
-     expect(@scope.date).toEqual("2013-01-01")
-     expect( angular.element(".bootstrap-datetimepicker-widget .datepicker .datepicker-days").css("display")).toBe "block"
+   expect(@scope.date).toEqual("2013-01-01")
+   expect( angular.element(".bootstrap-datetimepicker-widget .datepicker .datepicker-days").css("display")).toBe "block"
