@@ -66,5 +66,9 @@ dp.directive 'ngBs3Datepicker', ($compile)->
     $scope.$watch attr.ngModel, (newValue, oldValue)->
       if(oldValue and !newValue) then resetValue = true
 
+    $scope.$on '$destroy', ->
+      if input.data('DateTimePicker')
+        input.data('DateTimePicker').destroy()
+      element.off 'change.dp'
 
     $compile(input)($scope)
