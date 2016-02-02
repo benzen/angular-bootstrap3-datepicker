@@ -12,8 +12,25 @@
         <div data-ng-controller='AppCtrl'>
 
             <div class='form-group'>
+              <label>A date with date min view mode is years and view mode is years english language</label>
+              <ng-bs3-datepicker id="startdate" data-ng-model='startdate' language="en-ca" date-view-mode="years" date-min-view-mode="years" date-format="YYYY"/>
+            </div>
+
+            <div class='form-group'>
+              <label>A date with date min view mode is months and view mode is months english language</label>
+              <ng-bs3-datepicker id="dateb" data-ng-model='dateb' language="en-ca" date-view-mode="months" date-min-view-mode="months" date-format="MM YYYY" />
+            </div>
+
+            <div class='form-group'>
+              <label>A date with date min view mode is months and view mode is months english language</label>
+              <ng-bs3-datepicker id="datec" data-ng-model='datec' language="en-ca" date-view-mode="months" date-min-view-mode="months" date-format="MM"/>
+            </div>
+
+            <hr>
+
+            <div class='form-group'>
               <label>A date with french canadian language</label>
-              <ng-bs3-datepicker id="date1" data-ng-model='date1' language="fr-ca" date-format="YYYY-MMMM-DD"/>
+              <ng-bs3-datepicker id="date1" data-ng-model='date1' language="fr-ca" default-date="2013-11-1" date-format="YYYY-MMMM-DD"/>
             </div>
 
             <div class='form-group'>

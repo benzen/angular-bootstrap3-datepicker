@@ -9,17 +9,29 @@ dp.directive('ngBs3Datepicker', function($compile) {
     replace: true,
     template: "<div class='input-group date'>\n  <input type='text' class='form-control'/>\n  <span class='input-group-addon'>\n    <span class='fa fa-calendar'></span>\n  </span>\n</div>",
     link: function($scope, element, attr) {
-      var attributes, dateFormat, input, resetValue;
+      var attributes, dateFormat, input, resetValue, dateViewMode, dateMinViewMode, defaultDate;
       dateFormat = "";
+      dateViewMode="";
+      dateMinViewMode = "";
+      defaultDate = "";
       attributes = element.prop("attributes");
       input = element.find("input");
       resetValue = false;
       angular.forEach(attributes, function(e) {
         if (e.name !== "class") {
-          input.attr(e.name, e.value);
+        	input.attr(e.name, e.value);
         }
         if (e.name === "date-format") {
-          return dateFormat = e.value;
+        	dateFormat = e.value;
+        }
+        if(e.name === "date-view-mode") {
+        	dateViewMode = e.value;
+        }
+        if(e.name === "date-min-view-mode") {
+        	dateMinViewMode = e.value;
+        }
+        if(e.name === "default-date") {
+        	defaultDate = e.value;
         }
       });
       $scope.$watch(attr.language, function(value) {
@@ -29,6 +41,9 @@ dp.directive('ngBs3Datepicker', function($compile) {
           language: language,
           pickTime: false,
           format: dateFormat,
+          viewMode: dateViewMode,
+          minViewMode: dateMinViewMode,
+          defaultDate: $scope.startdate,
           icons: {
             time: 'fa fa-clock-o',
             date: 'fa fa-calendar',
